@@ -1,0 +1,67 @@
+body{
+    background-color: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#form-content{
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 100vh 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+input.login-input{
+    width: 10vw;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+input.login-input:focus{
+    outline: none;
+    border-color: blue;
+}
+
+#email{
+    margin-bottom: 20%;
+}
+
+#pwd{
+    margin-bottom: 10%;
+}
+
+::placeholder {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+input.login-input:focus::placeholder {
+    opacity: 0;
+}
+
+#submit-button{
+    margin-bottom: 20%;
+}
+
+#login-submit{
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#register-link{
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    margin-bottom: 20%;
+}
+
+
+

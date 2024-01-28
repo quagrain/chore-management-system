@@ -3,26 +3,28 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/login.css">
         <title>Login - CMS</title>
     </head>
 
-    <main>
+    <body>
         <form id="login" name="login" action="" method="POST">
-            <div> 
-                <label for="email">Email:</label>
-                <input type="text" id="email" class="login-input" name="email" placeholder="example@email.com" required inputmode="email" autocomplete="off" pattern="[a-zA-Z]{3}"> 
-            </div>
-            <div>
-                <!--ggl pwd-->
-                <label for="password">Password:<label>
-                <input type="password" id="pwd" class="login-input" name="pwd" pattern="\w+\d+{4,8}" placeholder="Password" required autocomplete="off">
-                <!-- Make tick boxes that show when a condition is met-->
-            </div>
+            <div id="form-content">
+                <div id="inputs">
+                    <div id="email-input"> 
+                        <input type="text" id="email" class="login-input" name="email" placeholder="Email" required inputmode="email" autocomplete="off" pattern="[a-zA-Z]{3}"> 
+                    </div>
+                    <div id="pwd-input">
+                        <input type="password" id="pwd" class="login-input" name="pwd" pattern="\w+\d+{4,8}" placeholder="Password" required autocomplete="off">
+                        <!-- Make tick boxes that show when a condition is met-->
+                    </div>
+                </div>
 
-            <div> <input type="submit" id="login-submit" name="login-submit" value="Sign In"> </div>
-            <div id="register-link"> <a href="register.html">Don't have an account? Create one!</a> </div>
+                <div id="submit-button"> <input type="submit" id="login-submit" name="login-submit" value="Sign In"> </div>
+                <div id="register-link"> <a href="register.html">Don't have an account? Create one!</a> </div>
+            </div>
         </form>
-    </main>
-
+    </body>
+`
 
 </html>
