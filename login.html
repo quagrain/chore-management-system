@@ -10,6 +10,9 @@
     <body>
         <form id="login" name="login" action="" method="POST">
             <div id="form-content">
+                <div id="logo">
+                    <img src="assets/images/logo_256.png" height="80px">
+                </div>
                 <div id="inputs">
                     <div id="email-input"> 
                         <input type="text" id="email" class="login-input" name="email" placeholder="Email" required inputmode="email" autocomplete="off" pattern="[a-zA-Z]{3}"> 
@@ -20,7 +23,8 @@
                     </div>
                 </div>
 
-                <div id="submit-button"> <input type="submit" id="login-submit" name="login-submit" value="Sign In"> </div>
+                <a href="home.html"><div id="submit-button"> <input type="button" id="login-submit" name="login-submit" value="Sign In"> </div></a>
+                <!--Make type submit-->
                 <div id="register-link"> <a href="register.html">Don't have an account? Create one!</a> </div>
             </div>
         </form>
