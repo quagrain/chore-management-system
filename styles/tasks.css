@@ -1,29 +1,76 @@
-:root{
+:root {
     --height: 93vh;
 }
 
-#bar, #header{
+#bar, #header {
     width: 100vw;
-    background-color: rgb(143, 133, 133);
+    background-color: #e2e5ca;/*rgb(143, 133, 133);*/
     height: calc(100vh - var(--height));
 }
 
-#buttons, #header-items{
+#buttons, #header-items {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     padding-top: 1vh;
 }
 
-#buttons img{
+#buttons img { 
     height: 50px;
 }
 
-body{
+body {
     margin:0;
 }
 
-#main-content{
-    background-color: rgb(121, 118, 118);
+#main-content {
+    background-color: #cdcdcd; /*rgb(121, 118, 118);*/
     height: var(--height);
 }
+
+table {
+    background-color: #e3e4db95;
+    margin-top: 0.5vh;
+}
+
+#tabs {
+    height: 4vh;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.tab-shape{
+    border: 2px solid black;
+    background-color: #e4e3a695;
+    padding: 1.5vh;
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: 0px;
+    text-align: center;
+}
+
+
+#tasks {
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+}
+
+.task-link{
+    text-decoration: none;
+}
+
+.action-button img {
+    height: 32px;
+}
+
+tbody tr {
+    text-align: center;
+}
+
+th,
+td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 10px;
+}
+

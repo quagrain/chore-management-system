@@ -7,7 +7,7 @@
 
 #bar, #header{
     width: 100vw;
-    background-color: rgb(143, 133, 133);
+    background-color: #e2e5ca;
     height: calc(100vh - var(--height));
 }
 
@@ -32,7 +32,7 @@ body{
 }
 
 #main-content{
-    background-color: rgb(121, 118, 118);
+    background-color: #cdcdcd;
     height: var(--height);
 }
 
@@ -46,7 +46,6 @@ body{
 }
 
 #all-tasks, #completed-tasks, #inprogress-tasks, #incomplete-tasks{
-    border: 1px solid black;
     width: var(--task_box_width);
     height: var(--task_box_height);
 }  
@@ -61,11 +60,12 @@ body{
 
 .task-box {
     border-radius: 2vw;
+    background-color: #c0bfa6ba;
 }
 
 .task-title {
     font-weight: bolder;
-    font-size: 2vw;
+    font-size: 3vh;
 }
 
 .task-count-text {
