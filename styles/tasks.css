@@ -1,0 +1,29 @@
+:root{
+    --height: 93vh;
+}
+
+#bar, #header{
+    width: 100vw;
+    background-color: rgb(143, 133, 133);
+    height: calc(100vh - var(--height));
+}
+
+#buttons, #header-items{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 1vh;
+}
+
+#buttons img{
+    height: 50px;
+}
+
+body{
+    margin:0;
+}
+
+#main-content{
+    background-color: rgb(121, 118, 118);
+    height: var(--height);
+}
