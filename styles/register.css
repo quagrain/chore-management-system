@@ -1,4 +1,5 @@
 body{
+    background-color: #cdcdcd;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,14 +8,15 @@ body{
 }
 
 #form-content{
+    background-color:  #e2e5ca;
     border: 1px solid;
     display: flex;
     flex-direction: column;
     align-items: start;
-    padding: 2vw 2vw 6vh 2vw;
-    width: 30vw;
-    gap: 1vw;
+    padding: 15vh 5vw;
+    gap: 3vh;
     border-radius: 10px;
+    margin-top: 5vh;
 }
 
 #register-button{
