@@ -1,7 +1,8 @@
 :root{
     --height: 93vh;
     --task_box_radius: 20%;
-    --task_box_width: 45vw;
+    --task_box_width: 18vw;
+    --task_box_height: 8vw;
 }
 
 #bar, #header{
@@ -26,6 +27,10 @@ body{
     margin:0;
 }
 
+#stats-items{
+    margin-top: 3vh;
+}
+
 #main-content{
     background-color: rgb(121, 118, 118);
     height: var(--height);
@@ -34,30 +39,57 @@ body{
 #top-half{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    height: 23vw;
-    margin-top: 4.5vh;
-    margin-bottom: 2vh;;
+    height: 10vw;
+    margin-top: 2.5vh;
+    padding-top: 2vh;
+    margin-bottom: 2vw;;
 }
 
-#bottom-half{
+#all-tasks, #completed-tasks, #inprogress-tasks, #incomplete-tasks{
+    border: 1px solid black;
+    width: var(--task_box_width);
+    height: var(--task_box_height);
+}  
+
+#all-tasks {
+    margin-left: 10vw;
+}
+
+#completed-tasks, #inprogress-tasks, #incomplete-tasks {
+    margin-left: 2vw;
+}
+
+.task-box {
+    border-radius: 2vw;
+}
+
+.task-title {
+    font-weight: bolder;
+    font-size: 2vw;
+}
+
+.task-count-text {
+    font-size: 1.5vw;
+    text-align: center;
+    margin-top: 1vw;
+}
+
+.task-count {
+    text-align: center;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    height: 23vw;
+    justify-content: center;
+    align-items: center;
 }
 
-#all-tasks, #completed-tasks{
-    border: 1px solid blue;
-    width: var(--task_box_width);
-    border-radius: var(--task_box_radius);
-}    
+#bottom-half {
+    height: 24vw;
+}
 
-#inprogress-tasks, #incomplete-tasks{
-    border: 1px solid yellow;
-    width: var(--task_box_width);
-    border-radius: var(--task_box_radius);
-}   
+a {
+    text-decoration: none;
+    color: black;
+}
+
 
 
 

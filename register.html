@@ -5,14 +5,18 @@
         <meta name="viewport" content="width:device-width; initial-scale:1.0;">
         <title>Register - CMS</title>
         <link rel="stylesheet" href="styles/register.css">
+        <link rel="icon" href="assets/images/logo_32.png">
     </head>
     
     <body>
         <form id="register" name="register" action="" method="POST">
             <div id="form-content">
+                <div id="logo" style="padding-left:13vw;">
+                    <img src="assets/images/logo_256.png" height="80px">
+                </div>
                 <div id="names" name="names">
                     <label for="f-name">First Name</label>
-                    <input id="f-name" name="f-name" type="text" placeholder="Sam" pattern="\w{3,}" required>
+                    <input id="f-name" name="f-name" type="text" placeholder="Sam" pattern="\w{3,}" required style="margin-right: 20px;">
 
                     <label for="surname">Surname</label>
                     <input id="surname" name="surname" type="text" placeholder="Altman" required>
@@ -28,23 +32,21 @@
 
                 <div id="family-roles" name="family-roles">
                     <label for="role">Role</label>
-                    <select id="role" name="role" required>
+                    <select id="role" name="role" required style="margin-right: 50px; width:120px">
                         <option value="select">Select</option>
                         <option value="father">Father</option>
                         <option value="mother">Mother</option>
                         <option value="son">Son</option>
                         <option value="daughter">Daughter</option>
                     </select>
-                </div>
 
-                <div id="birthday" name="birthday">
                     <label for="date">Date of Birth</label>
                     <input type="date" id="dob" name="dob">
                 </div>
 
                 <div>
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="example@email.com">
+                    <input type="email" id="email" name="email" placeholder="example@email.com" style="margin-right: 20px;width: 180px">
 
                     <span id="tel" style="padding: 0% 0% 0% 0%;">
                         <label for="phone">Phone</label>
