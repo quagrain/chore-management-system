@@ -2,19 +2,72 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width:device-width; initial-scale:1.0">
+    <meta name="viewport" content="width:device-width; initial-scale:1.0;">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="icon" href="assets/images/logo_256.png">
 </head>
+
 <body>
     <div id="main-content">
        <div id="header">
             <div id="header-items">
                 <div id="logo">
-                    <a href="home.html"><img src="assets/images/logo_256.png" height="50px"></a>
+                    <a href=""><img src="assets/images/logo_256.png" height="50px"></a>
                 </div>
             </div>
-           
+            <div id="stats">
+                <div id="stats-items">
+                    <div style="font-size: 40px; font-weight: bolder; padding-left: 10%;">Dashboard</div>
+                    <div style="font-size: 20px; font-weight: 300; padding-left: 10%;">Welcome, Victor</div>
+                    <div id="top-half">
+                        <a href="tasks.html">
+                            <div class="task-box" id="all-tasks">
+                                <div style="font-size: 24px;text-align: center; padding-top: 5%;">
+                                    <span class="task-title">All Tasks</span>
+                                </div>
+                                <div class="task-count" id="all-list">
+                                    <span class="task-count-text">20</span>
+                                </div>
+                        </a>
+                            </div>
+                        <a href="tasks.html">
+                            <div class="task-box" id="completed-tasks">
+                                <div style="font-size: 24px;text-align: center; padding-top: 5%;">
+                                    <span class="task-title">Completed Tasks</span>
+                                </div>
+                                <div class="task-count" id="complete-list">
+                                    <span class="task-count-text">10</span>
+                                </div>
+                        </a>
+                            </div>
+                        <a href="tasks.html">
+                            <div class="task-box" id="inprogress-tasks">
+                                <div style="font-size: 24px;text-align: center; padding-top: 5%;">
+                                    <span class="task-title">Inprogress Tasks</span>
+                                </div>
+                                <div class="task-count" id="inprogress-list">
+                                    <span class="task-count-text">0</span>
+                                </div>
+                        </a>
+                            </div>
+                        <a href="tasks.html">
+                            <div class="task-box" id="incomplete-tasks">
+                                <div style="font-size: 24px;text-align: center; padding-top: 5%;">
+                                    <span class="task-title">Incomplete Tasks</span>
+                                </div>
+                                <div class="task-count" id="incomplete-list">
+                                    <span class="task-count-text">4</span>
+                                </div>
+                        </a>
+                            </div> 
+                    </div>
+                    <div id="bottom-half">
+
+                    </div>
+                    
+                </div>
+            </div>
         </div>
        </div>
             
@@ -29,7 +82,7 @@
                 <a href=""><img src="assets/images/task.svg"></a>
             </div>
             <div class="bar-button" id="home-button">
-                <a href="home.html"><img src="assets/images/home.svg"></a>
+                <a href=""><img src="assets/images/home.svg"></a>
             </div>
             <div class="bar-button" id="profile-button">
                 <a href=""><img src="assets/images/profile.svg"></a>
@@ -41,4 +94,6 @@
 
     </div>
 </body>
+
+
 </html>
