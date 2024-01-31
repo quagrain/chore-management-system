@@ -123,6 +123,7 @@ ul {
 
 #complete-tasks, #pending-tasks{
     width: 38vw;
+    height: 50vh;
 }  
 
 #complete-tasks {
