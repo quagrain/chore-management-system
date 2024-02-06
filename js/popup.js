@@ -15,7 +15,7 @@ function addChore() {
         var newRow = table.insertRow(table.rows.length);
         newRow.insertCell(0).innerHTML = choreName;;
         newRow.insertCell(1).innerHTML = '<div class="action-button" id="check-button">' +
-        '<a href=""><img src="assets/images/delete.svg"></a>' +
+        '<a href=""><img src="../assets/images/delete.svg"></a>' +
         '</div>';
         hidePopup();
     } else {
@@ -35,13 +35,13 @@ function assignChore() {
         newRow.insertCell(2).innerHTML = '12-01-2023';
         newRow.insertCell(3).innerHTML = due_date;
         newRow.insertCell(4).innerHTML = 'Incomplete';
-        newRow.insertCell(5).innerHTML = '<div class="action-button" id="check-button">' +
-        '<a href=""><img src="assets/images/delete.svg"></a>' +
-        '</div>' + '<div class="action-button" id="check-button">' +
-        '<a href=""><img src="assets/images/delete.svg"></a>' +
-        '</div>' + '<div class="action-button" id="check-button">' +
-        '<a href=""><img src="assets/images/delete.svg"></a>' +
-        '</div>';
+        newRow.insertCell(5).innerHTML= '<div class="action-button" id="check-button">' +
+                                            '<a href=""><img src="../assets/images/delete.svg"></a>' +
+                                            '</div>' + '<div class="action-button" id="check-button">' +
+                                            '<a href=""><img src="../assets/images/delete.svg"></a>' +
+                                            '</div>' + '<div class="action-button" id="check-button">' +
+                                            '<a href=""><img src="../assets/images/delete.svg"></a>' +
+                                        '</div>';
         hidePopup();
     } else {
         alert('Please enter a chore name.');
