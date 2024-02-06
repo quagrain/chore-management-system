@@ -7,6 +7,11 @@
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
+DROP DATABASE IF EXISTS chores_mgt;
+CREATE DATABASE chores_mgt;
+USE chores_mgt;
+
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
