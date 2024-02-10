@@ -3,14 +3,13 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 29, 2024 at 09:22 PM
+-- Generation Time: Feb 09, 2024 at 11:07 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
 DROP DATABASE IF EXISTS chores_mgt;
 CREATE DATABASE chores_mgt;
 USE chores_mgt;
-
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -50,8 +49,8 @@ CREATE TABLE `Assignment` (
   `date_assign` date NOT NULL,
   `date_due` date NOT NULL,
   `last_updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `date_completed` date NOT NULL,
-  `img` varchar(100) NOT NULL,
+  `date_completed` date DEFAULT NULL,
+  `img` varchar(100) DEFAULT NULL,
   `who_assigned` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -63,7 +62,7 @@ CREATE TABLE `Assignment` (
 
 CREATE TABLE `Chores` (
   `cid` int(11) NOT NULL,
-  `chorname` varchar(100) NOT NULL
+  `chorename` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
