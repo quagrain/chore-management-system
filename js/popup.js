@@ -13,8 +13,8 @@ function addChore() {
     if (choreName.trim() !== "") {
         var table = document.getElementById('task-table').getElementsByTagName('tbody')[0];
         var newRow = table.insertRow(table.rows.length);
-        newRow.insertCell(0).innerHTML = choreName;;
-        newRow.insertCell(1).innerHTML = '<div class="action-button" id="check-button">' +
+        newRow.insertCell(0).innerHTML = choreName;
+        newRow.insertCell(1).innerHTML = '<div class="action-button" class="delete-button">' +
         '<a href=""><img src="../assets/images/delete.svg"></a>' +
         '</div>';
         hidePopup();

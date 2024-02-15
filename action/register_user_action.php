@@ -4,6 +4,8 @@ include '../settings/connection.php';
     
     $form_results = $_POST;
 
+    mysqli_real_escape_string($con, $form_results["f-name"]);
+
     if(isset($_POST['submit'])){
         $rid = 3;
         $fname = $form_results["f-name"];
@@ -18,7 +20,7 @@ include '../settings/connection.php';
     }
 
     if($passwd != $confirm_pwd){
-        header("Location: ../view/register.html");
+        header("Location: ../view/register_view.php");
         echo "<script>alert('Passwords must match');</script>";
         exit();
     }
@@ -26,7 +28,8 @@ include '../settings/connection.php';
 
     $hash_pwd = password_hash($passwd, PASSWORD_DEFAULT);
 
-    $query = "INSERT INTO People (rid, fid, fname, lname, gender, dob, tel, email, passwd) VALUES ($rid, $fid, '$fname', '$lname', $gender, '$dob', $tel, '$email', '$hash_pwd')";
+    $query = "INSERT INTO People (rid, fid, fname, lname, gender, dob, tel, email, passwd) 
+            VALUES ($rid, $fid, '$fname', '$lname', $gender, '$dob', $tel, '$email', '$hash_pwd')";
 
 
      if($con->query($query) === TRUE) {
@@ -34,7 +37,7 @@ include '../settings/connection.php';
          header("Location: ../view/login.html");
      }
      else {
-         header("Location: ../view/register.html");
+         header("Location: ../view/register_view.php");
          echo '<style>alert("Encountered an error. Try again.")</style>';
      }
      $con-> close();

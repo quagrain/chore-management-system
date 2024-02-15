@@ -14,11 +14,11 @@
             echo $pwd;  
             echo '<script>alert("Logged in");</script>';
         }else{
-            header("Location: ../view/index.html");
+            header("Location: ../view/login_view.php");
             echo '<script>alert("Enter your name and password");</script>';
         }
     }else{
-        header('Location: ../view/index.html');
+        header('Location: ../view/login_view.php');
         echo '<script>alert("Enter your name and password");</script>';
     }
 exit();
