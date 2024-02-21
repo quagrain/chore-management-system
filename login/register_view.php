@@ -1,3 +1,7 @@
+<?php
+include '../functions/select_role_fxn.php';
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -33,11 +37,7 @@
                 <div id="family-roles">
                     <label for="role">Role</label>
                     <select id="role" name="role" required style="margin-right: 50px; width:120px">
-                        <option value="select">Select</option>
-                        <option value="1">Father</option>
-                        <option value="2">Mother</option>
-                        <option value="3">Son</option>
-                        <option value="4">Daughter</option>
+                        <?php echo $row_value; ?>
                     </select>
 
                     <label for="dob">Date of Birth</label>
@@ -46,28 +46,27 @@
 
                 <div>
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="example@email.com" style="margin-right: 20px;width: 180px">
+                    <input type="email" id="email" name="email" placeholder="example@email.com" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" style="margin-right:20px; width: 180px">
 
                     <span id="tel" style="padding: 0 0 0 0;">
                         <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" placeholder="123-456-7890">
+                        <input type="tel" id="phone" name="phone" placeholder="123-456-7890" pattern="^\d{3}-\d{3}-\d{4}$">
                     </span>
                 </div>
 
                 <div id="password">
                     <label for="pwd">Password</label>
-                    <input type="password" id="pwd" name="pwd" placeholder="Password" required>
+                    <input type="password" id="pwd" name="pwd" placeholder="Password" required pattern="\w+\d+{4,8}">
                 </div>
                 <div id="confirm">
                     <label for="pwd-confirm">Confirm Password</label>
-                    <input type="password" id="pwd-confirm" name="pwd-confirm" placeholder="Confirm Password" required>
+                    <input type="password" id="pwd-confirm" name="pwd-confirm" placeholder="Confirm Password" required pattern="\w+\d+{4,8}">
                 </div>
 
                 <div id="register-button">
                     <a href="../view/dashboard.html"><input type="submit" id="submit" name="submit" value="Register"></a>
-                    <!--Make function to collect all the user input field values when the user submits-->
-                </div>  
-                <div id="login-link" style="text-align: center;padding-left: 10vw;"><a href="login_view.php">Already have an account? Login here!</a></div>
+                </div>
+                <div id="login-link" style="text-align: center;padding-left: 10vw;"><a href="logout_view.php">Already have an account? Login here!</a></div>
             </div>
         </form>
     </body>

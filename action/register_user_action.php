@@ -4,10 +4,7 @@ include '../settings/connection.php';
     
     $form_results = $_POST;
 
-    mysqli_real_escape_string($con, $form_results["f-name"]);
-
     if(isset($_POST['submit'])){
-        $rid = 3;
         $fname = $form_results["f-name"];
         $lname = $form_results["surname"];
         $gender = $form_results["gender"];
@@ -17,28 +14,32 @@ include '../settings/connection.php';
         $email = $form_results["email"];
         $passwd = $form_results["pwd"];
         $confirm_pwd = $form_results["pwd-confirm"];
+
     }
 
     if($passwd != $confirm_pwd){
-        header("Location: ../view/register_view.php");
         echo "<script>alert('Passwords must match');</script>";
+        header("Location: ../login/register_view.php");
         exit();
     }
 
 
     $hash_pwd = password_hash($passwd, PASSWORD_DEFAULT);
 
-    $query = "INSERT INTO People (rid, fid, fname, lname, gender, dob, tel, email, passwd) 
-            VALUES ($rid, $fid, '$fname', '$lname', $gender, '$dob', $tel, '$email', '$hash_pwd')";
+    $query = "INSERT INTO People (rid, fid, fname, lname, gender, dob, tel, email, passwd)
+        VALUES (3, $fid, '$fname', '$lname', $gender, '$dob', $tel, '$email', '$hash_pwd')";
+
 
 
      if($con->query($query) === TRUE) {
-         echo "New record created successfully";
-         header("Location: ../view/login.html");
+         header("Location: ../login/login_view.php");
      }
      else {
-         header("Location: ../view/register_view.php");
-         echo '<style>alert("Encountered an error. Try again.")</style>';
+         echo '<script>alert("Encountered an error. Try again.");</script>';
+         header("Location: ../login/register_view.php");
      }
      $con-> close();
+
+
+
 
