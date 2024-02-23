@@ -1,3 +1,8 @@
+<?php
+include '../settings/core.php';
+check_login();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,16 +25,16 @@
         <div id="tasks">  
                 <div class="overlay" id="overlay" onclick="hidePopup()"></div>
                 <div class="popup" id="popup">
-                    <div style="padding-top: 0vh;">
+                    <div style="padding-top: 0;">
                         <span style="font-weight: bold; font-size: 24px; margin-bottom: 1vh;">Add Chore</span>
                     </div>
                     <div>
-                        <form>
-                            <input type="text" id="chore-name" name="chore-name" placeholder="Sweeping">
+                        <form action="../action/add_chore_action.php" method="get" name="add_chore" id="add_chore">
+                            <input type="text" id="chore-name" name="chore-name" placeholder="Sweeping" pattern="^[A-Z]{1}\w{2,}">
+                            <input type="submit" name="chore_submit" value="Add">
                         </form>
                     </div>
                     <div id="popup-buttons">
-                        <button onclick="addChore()">Add</button>
                         <button onclick="hidePopup()">Close</button>
                     </div>
                 </div>  
@@ -65,13 +70,13 @@
                 <a href=""><img src="../assets/images/create.svg"></a>
             </div>
             <div class="bar-button" id="task-button">
-                <a href="tasks.html"><img src="../assets/images/task.svg"></a>
+                <a href="../view/tasks.html"><img src="../assets/images/task.svg"></a>
             </div>
             <div class="bar-button" id="home-button">
-                <a href="dashboard.php"><img src="../assets/images/home.svg"></a>
+                <a href="../view/dashboard.php"><img src="../assets/images/home.svg"></a>
             </div>
             <div class="bar-button" id="profile-button">
-                <a href="assign-chore.html"><img src="../assets/images/assign.svg"></a>
+                <a href="../view/assign-chore.html"><img src="../assets/images/assign.svg"></a>
             </div>
             <div class="bar-button" id="logout-button">
                 <a href="../login/logout_view.php"><img src="../assets/images/logout.svg"></a>

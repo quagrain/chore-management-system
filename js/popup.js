@@ -10,6 +10,7 @@ function hidePopup() {
 
 function addChore() {
     var choreName = document.getElementById('chore-name').value;
+    // check the regex for choreName
     if (choreName.trim() !== "") {
         var table = document.getElementById('task-table').getElementsByTagName('tbody')[0];
         var newRow = table.insertRow(table.rows.length);
@@ -19,7 +20,9 @@ function addChore() {
         '</div>';
         hidePopup();
     } else {
-        alert('Please enter a chore name.');
+        document.getElementById('add_chore').addEventListener('chore_submit', function(event) {
+            alert('Please enter a chore name.');
+        });
     }
 }
 
