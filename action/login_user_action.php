@@ -27,10 +27,9 @@ if (isset($_POST['login-submit'])){
         else{
             $_SESSION['pid'] = $row['pid'];
             $_SESSION['rid'] = $row['rid'];
-            $_SESSION['fname'] = $row['fname'];``
+            $_SESSION['fname'] = $row['fname'];
             $_SESSION['lname'] = $row['lname'];
             header("Location: ../view/dashboard.php");
-            end();
         }
     }
 
