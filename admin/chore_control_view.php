@@ -1,5 +1,6 @@
 <?php
 include '../settings/core.php';
+include '../functions/chore_fxn.php';
 check_login();
 ?>
 
@@ -50,14 +51,7 @@ check_login();
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Wash Dishes</td>
-                        <td>
-                            <div class="action-button" id="check-button">
-                                <a href=""><img src="../assets/images/delete.svg"></a>
-                            </div>
-                        </td>
-                    </tr>
+                    <?php echo $data;?>
                 </tbody>
                 </table>
 
