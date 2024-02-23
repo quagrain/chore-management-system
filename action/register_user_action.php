@@ -18,8 +18,8 @@ include '../settings/connection.php';
     }
 
     if($passwd != $confirm_pwd){
-        echo "<script>alert('Passwords must match');</script>";
-        header("Location: ../login/register_view.php");
+        echo '<script>alert("The passwords do not match.");</script>';
+        echo '<script>window.location.href="../login/register_view.php";</script>';
         exit();
     }
 
@@ -33,10 +33,11 @@ include '../settings/connection.php';
 
      if($con->query($query) === TRUE) {
          header("Location: ../login/login_view.php");
-     }
-     else {
+         end();
+     } else {
+         echo '<script>window.location.href="../login/register_view.php";</script>';
          echo '<script>alert("Encountered an error. Try again.");</script>';
-         header("Location: ../login/register_view.php");
+         end();
      }
      $con-> close();
 

@@ -50,21 +50,21 @@ include '../functions/select_role_fxn.php';
 
                     <span id="tel" style="padding: 0 0 0 0;">
                         <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" placeholder="123-456-7890" pattern="^\d{3}-\d{3}-\d{4}$">
+                        <input type="tel" id="phone" name="phone" placeholder="123-456-7890" pattern="^\d{3}[- ]\d{3}[- ]\d{4}$">
                     </span>
                 </div>
 
                 <div id="password">
                     <label for="pwd">Password</label>
-                    <input type="password" id="pwd" name="pwd" placeholder="Password" required pattern="\w+\d+{4,8}">
+                    <input type="password" id="pwd" name="pwd" placeholder="Password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
                 </div>
                 <div id="confirm">
                     <label for="pwd-confirm">Confirm Password</label>
-                    <input type="password" id="pwd-confirm" name="pwd-confirm" placeholder="Confirm Password" required pattern="\w+\d+{4,8}">
+                    <input type="password" id="pwd-confirm" name="pwd-confirm" placeholder="Confirm Password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
                 </div>
 
                 <div id="register-button">
-                    <a href="../view/dashboard.html"><input type="submit" id="submit" name="submit" value="Register"></a>
+                    <a href="../view/dashboard.php"><input type="submit" id="submit" name="submit" value="Register"></a>
                 </div>
                 <div id="login-link" style="text-align: center;padding-left: 10vw;"><a href="logout_view.php">Already have an account? Login here!</a></div>
             </div>

@@ -1,3 +1,4 @@
+<?php include '../action/login_user_action.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +20,7 @@
             <div id="stats">
                 <div id="stats-items">
                     <div style="font-size: 40px; font-weight: bolder; padding-left: 10%;">Dashboard</div>
-                    <div style="font-size: 20px; font-weight: 300; padding-left: 10%;">Welcome, Victor</div>
+                    <div style="font-size: 20px; font-weight: 300; padding-left: 10%;">Welcome, <?php echo $_SESSION['fname']. " ". $_SESSION['lname'];?></div>
                     <div id="top-half">
                         <a href="tasks.html">
                             <div class="task-box" id="all-tasks">

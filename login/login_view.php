@@ -21,11 +21,11 @@
                     </div>
                     <div id="pwd-input">
                         <label for="pwd">Password</label>
-                        <input type="password" id="pwd" class="login-input" name="pwd" pattern="\w+\d+{4,8}" placeholder="Password" required>
+                        <input type="password" id="pwd" class="login-input" name="pwd" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" placeholder="Password" required>
                     </div>
                 </div>
 
-                ><div id="submit-button"> <input type="submit" id="login-submit" name="login-submit" value="Sign In"></div>
+                <div id="submit-button"> <input type="submit" id="login-submit" name="login-submit" value="Sign In"></div>
                 <div id="register-link"> <a href="../login/register_view.php">Don't have an account? Create one!</a> </div>
             </div>
         </form>
