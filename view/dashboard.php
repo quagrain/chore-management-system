@@ -1,3 +1,4 @@
+<?php include '../action/login_user_action.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,28 +20,28 @@
             <div id="stats">
                 <div id="stats-items">
                     <div style="font-size: 40px; font-weight: bolder; padding-left: 10%;">Dashboard</div>
-                    <div style="font-size: 20px; font-weight: 300; padding-left: 10%;">Welcome, Victor</div>
+                    <div style="font-size: 20px; font-weight: 300; padding-left: 10%;">Welcome, <?php echo $_SESSION['fname']. " ". $_SESSION['lname'];?></div>
                     <div id="top-half">
                         <a href="tasks.html">
                             <div class="task-box" id="all-tasks">
                                 <div style="font-size: 24px;text-align: center; padding-top: 5%;">
                                     <span class="task-title">All Tasks</span>
                                 </div>
-                                <div class="task-count" id="all-list">
+                                <div class="task-count">
                                     <span class="task-count-text">10</span>
                                 </div>
-                        </a>
                             </div>
+                        </a>
                         <a href="tasks.html">
                             <div class="task-box" id="completed-tasks">
                                 <div style="font-size: 24px;text-align: center; padding-top: 5%;">
                                     <span class="task-title">Completed Tasks</span>
                                 </div>
-                                <div class="task-count" id="complete-list">
+                                <div class="task-count">
                                     <span class="task-count-text">5</span>
                                 </div>
-                        </a>
                             </div>
+                        </a>
                         <a href="tasks.html">
                             <div class="task-box" id="inprogress-tasks">
                                 <div style="font-size: 24px;text-align: center; padding-top: 5%;">
@@ -49,8 +50,8 @@
                                 <div class="task-count" id="inprogress-list">
                                     <span class="task-count-text">7</span>
                                 </div>
-                        </a>
                             </div>
+                        </a>
                         <a href="tasks.html">
                             <div class="task-box" id="incomplete-tasks">
                                 <div style="font-size: 24px;text-align: center; padding-top: 5%;">
@@ -59,8 +60,8 @@
                                 <div class="task-count" id="incomplete-list">
                                     <span class="task-count-text">4</span>
                                 </div>
+                            </div>
                         </a>
-                            </div> 
                     </div>
                     <div id="bottom-half">
                         <a href="tasks.html">
@@ -84,8 +85,8 @@
                                         </ul>
                                     </span>
                                 </div>
-                        </a>
                             </div>
+                        </a>
                         <a href="tasks.html">
                             <div class="info-box" id="pending-tasks">
                                 <div style="font-size: 24px;text-align: center; padding-top: 5%;">
@@ -102,8 +103,8 @@
                                         </ul>
                                     </span>
                                 </div>
-                        </a>
                             </div>
+                            </a>
                     </div>
                     
                 </div>
@@ -116,7 +117,7 @@
     <div id="bar">
         <div id="buttons">
             <div class="bar-button" id="settings-button">
-                <a href="manage.html"><img src="../assets/images/create.svg"></a>
+                <a href="../admin/chore_control_view.php"><img src="../assets/images/create.svg"></a>
             </div>
             <div class="bar-button" id="task-button">
                 <a href="tasks.html"><img src="../assets/images/task.svg"></a>
@@ -128,7 +129,7 @@
                 <a href="assign-chore.html"><img src="../assets/images/assign.svg"></a>
             </div>
             <div class="bar-button" id="logout-button">
-                <a href="index.html"><img src="../assets/images/logout.svg"></a>
+                <a href="../login/logout_view.php"><img src="../assets/images/logout.svg"></a>
             </div>
         </div>
 
