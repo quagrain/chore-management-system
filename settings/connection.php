@@ -9,3 +9,4 @@ $con = new mysqli($SERVER, $USERNAME, $PASSWORD, $DATABASE) or die("Could not co
 
 if($con->connect_error) die("Connection failed: " . $con->connect_error);
 
+

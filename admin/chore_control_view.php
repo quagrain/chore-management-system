@@ -19,7 +19,7 @@ check_login();
        <div id="header">
             <div id="header-items">
                 <div id="logo">
-                    <a href="dashboard.php"><img src="../assets/images/logo_256.png" height="50px"></a>
+                    <a href="../view/dashboard.php"><img src="../assets/images/logo_256.png" height="50px"></a>
                 </div>
             </div>
         </div>
