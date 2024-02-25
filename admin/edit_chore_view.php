@@ -1,33 +1,33 @@
 <?php
 
 include '../settings/core.php';
-include '../action/get_a_chore_action.php';
 check_login();
+include '../action/get_a_chore_action.php';
 
-if (isset($_GET['id'])) {
-    $chore_id = $_GET['id'];
-    $var_data = get_chore($chore_id);
-    $row = $var_data->fetch_assoc();
-    $chore_name = $row['chorename'];
-    $chore_id = $row['cid'];
+
+if (!isset($_GET['id'])) {
+    echo '<script>window.location.href="chore_control_view.php";</script>';
+    exit();
 }
+$chore_id = $_GET['id'];
+$var_data = get_chore($chore_id);
 
 ?>
 
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Edit Chore</title>
 </head>
 <body>
-<form name="edit_chore" method="get" action="../action/edit_a_chore_action.php">
-    <label for="chore_name">
-        <input type="text" placeholder="Chore Name" name="chore_name">
-    </label>
-    <input type="submit" name="edit_chore_submit" value="Edit">
+<h2>Edit Chore</h2>
+<form action="../action/edit_a_chore_action.php" method="get" name="login-form" id="login-form">
+    <input type="text" placeholder="Chore" name="chore_name" id="chore_name" required/>
+    <input type="hidden" class="hidden" name="chore_id" value=<?php echo $chore_id; ?> />
+    <input type="submit" name="edit_chore_submit" id="edit_chore_submit" value="Edit"/>
 </form>
-
-</body>
 
 
 </html>

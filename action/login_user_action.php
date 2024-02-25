@@ -2,6 +2,7 @@
 
 session_start();
 include '../settings/connection.php';
+global $con;
 
 if (isset($_POST['login-submit'])){
     $email = $_POST['email'];
