@@ -70,7 +70,7 @@ check_login();
                 <a href="../view/dashboard.php"><img src="../assets/images/home.svg"></a>
             </div>
             <div class="bar-button" id="profile-button">
-                <a href="../view/assign-chore.html"><img src="../assets/images/assign.svg"></a>
+                <a href="assign_chore_view.php"><img src="../assets/images/assign.svg"></a>
             </div>
             <div class="bar-button" id="logout-button">
                 <a href="../login/logout_view.php"><img src="../assets/images/logout.svg"></a>

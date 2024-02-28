@@ -7,3 +7,12 @@ function check_login(){
         die();
     }
 }
+
+
+function check_roleID(){
+    if(isset($_SESSION['rid'])){
+        return $_SESSION['rid'];
+    } else {
+        return false;
+    }
+}

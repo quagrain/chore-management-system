@@ -23,6 +23,7 @@ include '../settings/connection.php';
         exit();
     }
 
+    // check if an email exists in tha database. if there is one, alert the user and redirect to the resgister page.
 
     $hash_pwd = password_hash($passwd, PASSWORD_DEFAULT);
 
