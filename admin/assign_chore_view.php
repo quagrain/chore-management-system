@@ -26,7 +26,7 @@ check_login();
                 </div>
             </div>
         </div>
-        <div id="tasks">  
+        <div id="tasks">
                 <div class="overlay" id="overlay" onclick="hidePopup()"></div>
                 <div class="popup" id="popup">
                     <div style="padding-top: 0;">

@@ -1,6 +1,7 @@
 <?php
 include '../settings/core.php';
 include '../functions/chore_fxn.php';
+global $data;
 check_login();
 ?>
 
