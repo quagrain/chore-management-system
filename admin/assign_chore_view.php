@@ -1,8 +1,9 @@
 <?php
 include '../settings/core.php';
+include '../functions/dropdown_list_fxn.php';
 include '../functions/get_all_assignment_fxn.php';
 
-global $row;
+global $row, $user_drop, $chores_drop;
 check_login();
 ?>
 
@@ -34,15 +35,10 @@ check_login();
                     <div>
                         <form action="../action/assign_a_chore_action.php" method="get" name="chore-assign" id="chore-assign">
                             <select id="assign-person" name="assign-person">
-                                <option value="victor">Victor</option>
-                                <option value="jane">Jane</option>
-                                <option value="sam">Sam</option>
-                                <option value="ella">Ella</option>
+                                <?php echo $user_drop; ?>
                             </select>
                             <select id="assign-chore" name="assign-chore" required>
-                                <option value="19">Sweeping</option>
-                                <option value="23">Mopping</option>
-                                <option value="31">Cooking</option>
+                                <?php echo $chores_drop; ?>
                             </select>
                             <input type="date" id="due-date" name="due-date" required>
                             <input type="submit" value="Add" name="submit">
