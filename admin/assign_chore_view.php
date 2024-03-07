@@ -1,5 +1,8 @@
 <?php
 include '../settings/core.php';
+include '../functions/get_all_assignment_fxn.php';
+
+global $row;
 check_login();
 ?>
 
@@ -46,10 +49,6 @@ check_login();
                             <input type="button" value="Close" onclick="hidePopup()">
                         </form>
                     </div>
-<!--                    <div id="popup-buttons">-->
-<!--                        <button onclick="assignChore()">Add</button>-->
-<!--                        <button onclick="hidePopup()">Close</button>-->
-<!--                    </div>-->
                 </div>  
                 
                 <table id="task-table" name="task-table" style="margin-left: 20vw; margin-right: 20vw;margin-top: 0.5vh;">
@@ -67,24 +66,7 @@ check_login();
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Wash Dishes</td>
-                        <td>Victor</td>
-                        <td>12-01-2023</td>
-                        <td>12-01-2023</td>
-                        <td>Incomplete</td>
-                        <td>
-                            <div class="action-button">
-                                <a href=""><img src="../assets/images/delete.svg"></a>
-                            </div>
-                            <div class="action-button">
-                                <a href=""><img src="../assets/images/delete.svg"></a>
-                            </div>
-                            <div class="action-button">
-                                <a href=""><img src="../assets/images/delete.svg"></a>
-                            </div>
-                        </td>
-                    </tr>
+                    <?php echo $row; ?>
                 </tbody>
                 </table>
 

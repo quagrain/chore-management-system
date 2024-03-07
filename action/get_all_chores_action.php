@@ -6,7 +6,7 @@ function list_chores()
 {
     global $con;
     $query = "SELECT * FROM Chores";
-    if (!$result = $con->query($query)) {
+    if ($con->query($query)) {
         echo "Failed";
         exit();
     }
