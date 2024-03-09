@@ -1,7 +1,10 @@
 <?php
 include '../settings/core.php';
 include '../functions/chore_fxn.php';
+global $data;
 check_login();
+if (check_roleID() == 3) header('Location: ../view/dashboard.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -60,23 +63,33 @@ check_login();
             
     <div id="bar">
         <div id="buttons">
-            <div class="bar-button" id="settings-button">
+            <div class="bar-button" id="chore-control" title="Chore Control">
                 <a href=""><img src="../assets/images/create.svg"></a>
             </div>
-            <div class="bar-button" id="task-button">
-                <a href="../view/tasks.html"><img src="../assets/images/task.svg"></a>
+            <div class="bar-button" id="task-button" title="Tasks">
+                <a href="../view/tasks.php"><img src="../assets/images/task.svg"></a>
             </div>
-            <div class="bar-button" id="home-button">
+            <div class="bar-button" id="home-button" title="Dashboard">
                 <a href="../view/dashboard.php"><img src="../assets/images/home.svg"></a>
             </div>
-            <div class="bar-button" id="profile-button">
-                <a href="../view/assign-chore.html"><img src="../assets/images/assign.svg"></a>
+            <div class="bar-button" id="assignment-button" title="Chore Assignments">
+                <a href="assign_chore_view.php"><img src="../assets/images/assign.svg"></a>
             </div>
-            <div class="bar-button" id="logout-button">
+            <div class="bar-button" id="logout-button" title="Logout">
                 <a href="../login/logout_view.php"><img src="../assets/images/logout.svg"></a>
             </div>
         </div>
 
     </div>
 </body>
+<script>
+    let rid = <?php echo check_roleID()?>;
+    if(rid===2){
+        const delete_btn = document.getElementsByClassName('delete');
+        for (let i = 0; i < delete_btn.length; i++) {
+            delete_btn.item(i).style.display = 'none';
+        }
+    }
+</script>
+
 </html>

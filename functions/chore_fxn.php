@@ -13,7 +13,7 @@ while ($row = $var_data->fetch_assoc()) {
     $data .= "<tr>   
                 <td>".$row['chorename']."</td>
                 <td>
-                    <div class='action-button' id='delete-button'>
+                    <div class='action-button delete' id='''delete-button'>
                         <a href='../action/delete_chore_action.php?id=$chore_id'><img src='../assets/images/delete.svg'></a>
                     </div>
                     <div class='action-button' id='edit-button' style='margin-top: 10px'>

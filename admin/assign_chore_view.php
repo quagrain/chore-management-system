@@ -1,3 +1,14 @@
+<?php
+include '../settings/core.php';
+include '../functions/dropdown_list_fxn.php';
+include '../functions/get_all_assignment_fxn.php';
+
+global $row, $user_drop, $chores_drop;
+check_login();
+
+if (check_roleID() == 3) header('Location: ../view/dashboard.php');
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,35 +24,28 @@
        <div id="header">
             <div id="header-items">
                 <div id="logo">
-                    <a href="dashboard.php"><img src="../assets/images/logo_256.png" height="50px"></a>
+                    <a href="../view/dashboard.php"><img src="../assets/images/logo_256.png" height="50px"></a>
                 </div>
             </div>
         </div>
-        <div id="tasks">  
+        <div id="tasks">
                 <div class="overlay" id="overlay" onclick="hidePopup()"></div>
                 <div class="popup" id="popup">
                     <div style="padding-top: 0;">
                         <span style="font-weight: bold; font-size: 24px; margin-bottom: 1vh;">Add Chore</span>
                     </div>
                     <div>
-                        <form action="" method="post" name="chore-assign" id="chore-assign">
+                        <form action="../action/assign_a_chore_action.php" method="get" name="chore-assign" id="chore-assign">
                             <select id="assign-person" name="assign-person">
-                                <option value="victor">Victor</option>
-                                <option value="jane">Jane</option>
-                                <option value="sam">Sam</option>
-                                <option value="ella">Ella</option>
+                                <?php echo $user_drop; ?>
                             </select>
-                            <select id="assign-chore" name="assign-chore">
-                                <option value="sweep">Sweeping</option>
-                                <option value="mop">Mopping</option>
-                                <option value="cook">Cooking</option>
+                            <select id="assign-chore" name="assign-chore" required>
+                                <?php echo $chores_drop; ?>
                             </select>
                             <input type="date" id="due-date" name="due-date" required>
+                            <input type="submit" value="Add" name="submit">
+                            <input type="button" value="Close" onclick="hidePopup()">
                         </form>
-                    </div>
-                    <div id="popup-buttons">
-                        <button onclick="assignChore()">Add</button>
-                        <button onclick="hidePopup()">Close</button>
                     </div>
                 </div>  
                 
@@ -52,7 +56,7 @@
                 <thead id="table-head">
                     <tr>
                         <th>Chore Name</th>
-                        <th>Assigned To</th>
+                        <th>Assigned By</th>
                         <th>Date Assigned</th>
                         <th>Due Date</th>
                         <th>Chore Status</th>
@@ -60,24 +64,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Wash Dishes</td>
-                        <td>Victor</td>
-                        <td>12-01-2023</td>
-                        <td>12-01-2023</td>
-                        <td>Incomplete</td>
-                        <td>
-                            <div class="action-button">
-                                <a href=""><img src="../assets/images/delete.svg"></a>
-                            </div>
-                            <div class="action-button">
-                                <a href=""><img src="../assets/images/delete.svg"></a>
-                            </div>
-                            <div class="action-button">
-                                <a href=""><img src="../assets/images/delete.svg"></a>
-                            </div>
-                        </td>
-                    </tr>
+                    <?php echo $row; ?>
                 </tbody>
                 </table>
 
@@ -86,23 +73,33 @@
             
     <div id="bar">
         <div id="buttons">
-            <div class="bar-button" id="settings-button">
+            <div class="bar-button" id="chore-control" title="Chore Control">
                 <a href="../admin/chore_control_view.php"><img src="../assets/images/create.svg"></a>
             </div>
-            <div class="bar-button" id="task-button">
-                <a href="tasks.html"><img src="../assets/images/task.svg"></a>
+            <div class="bar-button" id="task-button" title="Tasks">
+                <a href="../view/tasks.php"><img src="../assets/images/task.svg"></a>
             </div>
-            <div class="bar-button" id="home-button">
-                <a href="dashboard.php"><img src="../assets/images/home.svg"></a>
+            <div class="bar-button" id="home-button" title="Dashboard">
+                <a href="../view/dashboard.php"><img src="../assets/images/home.svg"></a>
             </div>
-            <div class="bar-button" id="profile-button">
+            <div class="bar-button" id="assignment-button" title="Chore Assignments">
                 <a href=""><img src="../assets/images/assign.svg"></a>
             </div>
-            <div class="bar-button" id="logout-button">
+            <div class="bar-button" id="logout-button" title="Logout">
                 <a href="../login/logout_view.php"><img src="../assets/images/logout.svg"></a>
             </div>
         </div>
 
     </div>
+
 </body>
+<script>
+    let rid = <?php echo check_roleID()?>;
+    if(rid===2){
+        const delete_btn = document.getElementsByClassName('delete');
+        for (let i = 0; i < delete_btn.length; i++) {
+            delete_btn.item(i).style.display = 'none';
+        }
+    }
+</script>
 </html>

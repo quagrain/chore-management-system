@@ -20,16 +20,23 @@
 //}
 
 include '../settings/connection.php';
-include '../functions/chore_fxn.php';
+global $con;
 
-$c_id = $chore_id;
+
+
+$c_id = $_GET['chore_id'];
 $chore_name = $_GET['chore_name'];
-$sql = "UPDATE Chores SET chorename = '$chore_name' WHERE cid = $cid";
 
+if(!isset($_GET['edit_chore_submit'])) {
+    echo '<script>window.location.href="../admin/edit_chore_view.php";</script>';
+    end();
+}
 
-if ($con->query($sql) === TRUE) {
+$sql = "UPDATE Chores SET chorename = '$chore_name' WHERE cid = $c_id";
+
+if ($con->query($sql)) {
     echo '<script>alert("Updated!");</script>';
     echo '<script>window.location.href="../admin/chore_control_view.php";</script>';
 } else {
-    echo '<script>alert("Error: ' . $sql . $con->error . '");</script>';
+    echo "Error: ' . $sql . $con->error . '";
 }

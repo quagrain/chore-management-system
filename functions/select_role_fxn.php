@@ -1,6 +1,7 @@
 <?php
 
 include '../settings/connection.php';
+global $con;
 
 $query = "SELECT * FROM Family_name";
 

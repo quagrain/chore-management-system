@@ -3,7 +3,6 @@
 include '../settings/connection.php';
 
 global $con, $sql;
-echo 'yh';
 
 if(isset($_GET['id'])) {
     $chore_id = $_GET['id'];
@@ -18,10 +17,9 @@ if(isset($_GET['id'])) {
         echo '<script>alert("Deleted chore: ' . $chore_name . '!");</script>';
         echo '<script>window.location.href="../admin/chore_control_view.php";</script>';
     }
-    exit();
 } else {
-    echo '"Error: ' . $sql . '<br>' . $con->error;
-    exit();
+    echo "Error: ' . $sql . $con->error' ";
 }
+exit();
 
 
