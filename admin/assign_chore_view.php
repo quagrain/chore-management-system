@@ -93,4 +93,13 @@ if (check_roleID() == 3) header('Location: ../view/dashboard.php');
     </div>
 
 </body>
+<script>
+    let rid = <?php echo check_roleID()?>;
+    if(rid===2){
+        const delete_btn = document.getElementsByClassName('delete');
+        for (let i = 0; i < delete_btn.length; i++) {
+            delete_btn.item(i).style.display = 'none';
+        }
+    }
+</script>
 </html>

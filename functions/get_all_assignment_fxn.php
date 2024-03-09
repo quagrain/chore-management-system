@@ -29,7 +29,7 @@ while ($data = $assignments->fetch_assoc()) {
                     <div class='action-button'>
                         <a href=''><img src='../assets/images/edit.svg'></a>
                     </div>
-                    <div class='action-button'>
+                    <div class='action-button delete' id='delete-button'>
                         <a href='../action/delete_assignment_action.php?assignment_id=$assignment_id'><img src='../assets/images/delete.svg'></a>
                     </div>
                     <div class='action-button'>
