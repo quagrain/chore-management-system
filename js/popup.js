@@ -12,7 +12,7 @@ function addChore() {
     var choreName = document.getElementById('chore-name').value;
     // check the regex for choreName
     if (choreName.trim() !== "") {
-        var table = document.getElementById('task-table').getElementsByTagName('tbody')[0];
+        const table = document.getElementById('task-table').getElementsByTagName('tbody')[0];
         var newRow = table.insertRow(table.rows.length);
         newRow.insertCell(0).innerHTML = choreName;
         newRow.insertCell(1).innerHTML = '<div class="action-button" class="delete-button">' +

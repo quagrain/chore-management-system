@@ -1,3 +1,9 @@
+<?php
+include '../action/login_user_action.php';
+include '../settings/core.php';
+check_login();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +23,7 @@
             </div>
         </div>
         <div id="tabs">
-            <a href="tasks.html" class="task-link"><div class="tab-shape" id="incomplete-tab" style="margin-left: 3.5vw; margin-top: 1.1vh;height:0.1vh;">Incomplete</div></a>
+            <a href="tasks.php" class="task-link"><div class="tab-shape" id="incomplete-tab" style="margin-left: 3.5vw; margin-top: 1.1vh;height:0.1vh;">Incomplete</div></a>
             <a href="" class="task-link"><div class="tab-shape" id="complete-tab" style="margin-top: -0.4vh;">Complete</div></a>
         </div>
         <div id="tasks">    
@@ -161,23 +167,33 @@
             
     <div id="bar">
         <div id="buttons">
-            <div class="bar-button" id="settings-button">
+            <div class="bar-button" id="chore-control" title="Chore Control">
                 <a href="../admin/chore_control_view.php"><img src="../assets/images/create.svg"></a>
             </div>
-            <div class="bar-button" id="task-button">
+            <div class="bar-button" id="task-button" title="Tasks">
                 <a href=""><img src="../assets/images/task.svg"></a>
             </div>
-            <div class="bar-button" id="home-button">
+            <div class="bar-button" id="home-button" title="Dashboard">
                 <a href="dashboard.php"><img src="../assets/images/home.svg"></a>
             </div>
-            <div class="bar-button" id="profile-button">
+            <div class="bar-button" id="assignment-button" title="Chore Assignments">
                 <a href="../admin/assign_chore_view.php"><img src="../assets/images/assign.svg"></a>
             </div>
-            <div class="bar-button" id="logout-button">
+            <div class="bar-button" id="logout-button" title="Logout">
                 <a href="../login/logout_view.php"><img src="../assets/images/logout.svg"></a>
             </div>
         </div>
 
     </div>
 </body>
+<script>
+    let rid = <?php echo check_roleID()?>;
+    if(rid===3){
+        const chore = document.getElementById('chore-control');
+        const assign = document.getElementById('assignment-button');
+        chore.style.display = 'none';
+        assign.style.display = 'none';
+    }
+</script>
+
 </html>

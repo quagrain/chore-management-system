@@ -15,6 +15,7 @@ check_login();
     <link rel="icon" href="../assets/images/logo_256.png">
 </head>
 
+
 <body>
     <div id="main-content">
        <div id="header">
@@ -29,7 +30,7 @@ check_login();
                     <div style="font-size: 20px; font-weight: 300; padding-left: 10%;">Welcome, <?php echo $_SESSION['fname']. " ". $_SESSION['lname'];?></div>
                     <div id="top-half">
                             <div class="task-box" id="all-tasks">
-                        <a href="tasks.html">
+                        <a href="tasks.php">
                                 <div style="font-size: 24px;text-align: center; padding-top: 5%;">
                                     <span class="task-title">All Tasks</span>
                                 </div>
@@ -39,7 +40,7 @@ check_login();
                         </a>
                             </div>
                             <div class="task-box" id="completed-tasks">
-                        <a href="tasks.html">
+                        <a href="tasks.php">
                                 <div style="font-size: 24px;text-align: center; padding-top: 5%;">
                                     <span class="task-title">Completed Tasks</span>
                                 </div>
@@ -49,7 +50,7 @@ check_login();
                         </a>
                             </div>
                             <div class="task-box" id="inprogress-tasks">
-                        <a href="tasks.html">
+                        <a href="tasks.php">
                                 <div style="font-size: 24px;text-align: center; padding-top: 5%;">
                                     <span class="task-title">Inprogress Tasks</span>
                                 </div>
@@ -59,7 +60,7 @@ check_login();
                             </div>
                         </a>
                             <div class="task-box" id="incomplete-tasks">
-                        <a href="tasks.html">
+                        <a href="tasks.php">
                                 <div style="font-size: 24px;text-align: center; padding-top: 5%;">
                                     <span class="task-title">Incomplete Tasks</span>
                                 </div>
@@ -93,19 +94,19 @@ check_login();
     </div>
     <div id="bar">
         <div id="buttons">
-            <div class="bar-button" id="settings-button">
+            <div class="bar-button" id="chore-control" title="Chore Control">
                 <a href="../admin/chore_control_view.php"><img src="../assets/images/create.svg"></a>
             </div>
-            <div class="bar-button" id="task-button">
-                <a href="tasks.html"><img src="../assets/images/task.svg"></a>
+            <div class="bar-button" id="task-button" title="Tasks">
+                <a href="tasks.php"><img src="../assets/images/task.svg"></a>
             </div>
-            <div class="bar-button" id="home-button">
+            <div class="bar-button" id="home-button" title="Dashboard">
                 <a href=""><img src="../assets/images/home.svg"></a>
             </div>
-            <div class="bar-button" id="profile-button">
+            <div class="bar-button" id="assignment-button" title="Chore Assignments">
                 <a href="../admin/assign_chore_view.php"><img src="../assets/images/assign.svg"></a>
             </div>
-            <div class="bar-button" id="logout-button">
+            <div class="bar-button" id="logout-button" title="Logout">
                 <a href="../login/logout_view.php"><img src="../assets/images/logout.svg"></a>
             </div>
         </div>
@@ -113,5 +114,14 @@ check_login();
     </div>
 </body>
 
+<script>
+    let rid = <?php echo check_roleID()?>;
+    if(rid===3){
+        const chore = document.getElementById('chore-control');
+        const assign = document.getElementById('assignment-button');
+        chore.style.display = 'none';
+        assign.style.display = 'none';
+    }
+</script>
 
 </html>

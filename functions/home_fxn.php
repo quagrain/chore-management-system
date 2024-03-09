@@ -44,10 +44,10 @@ while($data = $recent->fetch_assoc()){
                     "</div>
                     </td>
                     <td>Date assigned: ".$date_assigned."</td>
-                    <td>Date completed: ".$date_completed."</td>
+                    <td>Date completed: ".$date_completed. "</td>
                     <td>
                         <div>
-                            <a href='../view/tasks.html' id='detail-link'>Chore details</a>
+                            <a href='../view/tasks.php' id='detail-link'>Chore details</a>
                         </div>
                     </td>
                 </tr>";

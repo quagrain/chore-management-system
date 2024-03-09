@@ -2,6 +2,7 @@
 
 include '../settings/core.php';
 check_login();
+if (check_roleID() == 3) header('Location: ../view/dashboard.php');
 include '../action/get_a_chore_action.php';
 
 
