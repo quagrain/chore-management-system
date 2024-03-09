@@ -42,13 +42,17 @@ body{
     height: 10vw;
     margin-top: 2.5vh;
     padding-top: 2vh;
-    margin-bottom: 2vw;;
 }
 
 #all-tasks, #completed-tasks, #inprogress-tasks, #incomplete-tasks{
     width: var(--task_box_width);
     height: var(--task_box_height);
 }  
+
+.link-overflow{
+    width: var(--task_box_width);
+    height: var(--task_box_height);
+}
 
 #all-tasks {
     margin-left: 10vw;
@@ -75,14 +79,14 @@ body{
 }
 
 .task-count {
-    text-align: center;
     display: flex;
-    justify-content: center;
+    text-align: center;
     align-items: center;
+    justify-content: center;
 }
 
 #bottom-half {
-    height: 34vw;
+    height: 45vw;
     width: 100vw;
     display: flex;
     flex-direction: row;
@@ -121,18 +125,30 @@ ul {
     list-style-type: none;
 }
 
-#complete-tasks, #pending-tasks{
-    width: 38vw;
+#recent-tasks{
+    width: 78vw;
     height: 50vh;
-}  
-
-#complete-tasks {
     margin-left: 10vw;
 }
 
-#pending-tasks {
-    margin-left: 2vw;
+#detail-link{
+    color: blue;
 }
+
+table, tr{
+    border: 2px solid grey;
+    padding: 20px;
+    border-collapse: collapse;
+    margin-top: 3%;
+    margin-left:3%;
+}
+
+td{
+    width: 18vw;
+    height: 8vh;
+}
+
+
 
 
 

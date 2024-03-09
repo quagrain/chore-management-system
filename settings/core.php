@@ -2,9 +2,9 @@
 
 session_start();
 function check_login(){
-    if(!isset($_SESSION['uid'])){
+    if(!isset($_SESSION['pid'])){
         header('Location: ../login/login_view.php');
-        die();
+        exit();
     }
 }
 

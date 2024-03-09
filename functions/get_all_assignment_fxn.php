@@ -4,10 +4,12 @@ include '../settings/connection.php';
 global $con;
 
 $assignments = get_records();
+$assignment_count = 0;
 $row = '';
 
 
 while ($data = $assignments->fetch_assoc()) {
+    $assignment_count+=1;
     $assignment_id = $data['assignmentid'];
 
     if($assigned_by = $con->query("SELECT fname FROM People WHERE pid =".$data['who_assigned']))

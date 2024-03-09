@@ -35,4 +35,3 @@ if (isset($_POST['login-submit'])){
     }
 
 }
-    echo $_SESSION['pid'];
